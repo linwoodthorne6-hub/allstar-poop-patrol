@@ -30,6 +30,35 @@
         
         .service-areas { background: #f4f7f6; padding: 40px 20px; text-align: center; }
         footer { background: #1a365d; color: white; padding: 30px 20px; text-align: center; }
+
+        /* ── Membership Section ── */
+        .membership-section { padding: 60px 20px; background: #fff; text-align: center; }
+        .membership-section > h2 { color: #1a365d; font-size: 2rem; margin-bottom: 10px; }
+        .membership-subtitle { color: #555; max-width: 560px; margin: 0 auto 44px; }
+
+        .tier-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; max-width: 860px; margin: 0 auto 52px; }
+        .tier-card { flex: 1; min-width: 280px; max-width: 380px; border: 2px solid #e2e8f0; border-radius: 10px; padding: 32px 28px; background: #fff; text-align: left; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+        .tier-card.featured { border-color: #1a365d; position: relative; }
+        .tier-badge { display: inline-block; background: #f4f7f6; color: #1a365d; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 4px 10px; border-radius: 4px; margin-bottom: 12px; }
+        .tier-card.featured .tier-badge { background: #1a365d; color: #fff; }
+        .tier-card h3 { color: #1a365d; font-size: 1.4rem; margin: 0 0 4px; }
+        .tier-discount { color: #2f855a; font-weight: 700; font-size: 1rem; margin: 0 0 20px; }
+        .tier-perks { list-style: none; padding: 0; margin: 0; }
+        .tier-perks li { padding: 8px 0 8px 26px; position: relative; color: #444; font-size: 0.95rem; border-bottom: 1px solid #f0f4f0; }
+        .tier-perks li:last-child { border-bottom: none; }
+        .tier-perks li::before { content: '✓'; position: absolute; left: 0; color: #2f855a; font-weight: 700; }
+
+        .membership-calculator { background: #f4f7f6; border-radius: 10px; max-width: 580px; margin: 0 auto; padding: 38px 32px; }
+        .membership-calculator h3 { color: #1a365d; font-size: 1.35rem; margin: 0 0 26px; }
+        .calc-row { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-bottom: 30px; }
+        .calc-group { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
+        .calc-group label { font-size: 0.75rem; font-weight: 700; color: #555; text-transform: uppercase; letter-spacing: 0.05em; }
+        .calc-select { padding: 10px 14px; border: 1px solid #d0d7e0; border-radius: 6px; font-size: 0.95rem; font-family: 'Roboto', sans-serif; background: #fff; color: #1a365d; font-weight: 700; cursor: pointer; min-width: 130px; }
+        .calc-select:focus { outline: 2px solid #2f855a; outline-offset: 1px; }
+        .calc-price-block { margin-bottom: 22px; }
+        .calc-total { font-size: 2.6rem; font-weight: 700; color: #1a365d; margin: 0 0 4px; }
+        .calc-per-month { color: #2f855a; font-size: 1rem; font-weight: 700; margin: 0 0 4px; }
+        .calc-savings { color: #666; font-size: 0.88rem; margin: 0; }
     </style>
 </head>
 <body>
@@ -81,6 +110,71 @@
     </div>
 </section>
 
+<!-- Section 3: Membership Plans -->
+<section class="membership-section" id="membership">
+    <h2>Membership Plans</h2>
+    <p class="membership-subtitle">Lock in your rate, save on every visit, and enjoy perks that standard month-to-month customers don't get.</p>
+
+    <div class="tier-grid">
+        <div class="tier-card">
+            <span class="tier-badge">6-Month</span>
+            <h3>Standard Member</h3>
+            <p class="tier-discount">5% off every service</p>
+            <ul class="tier-perks">
+                <li>5% off your recurring rate</li>
+                <li>1 free extra cleanup</li>
+                <li>Member-only promotions</li>
+            </ul>
+        </div>
+        <div class="tier-card featured">
+            <span class="tier-badge">12-Month</span>
+            <h3>All-Star Member</h3>
+            <p class="tier-discount">15% off every service</p>
+            <ul class="tier-perks">
+                <li>15% off your recurring rate</li>
+                <li>Free initial cleanup</li>
+                <li>1 free extra cleanup</li>
+                <li>12-month rate lock</li>
+                <li>Member-only promotions</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="membership-calculator">
+        <h3>See Your Price</h3>
+        <div class="calc-row">
+            <div class="calc-group">
+                <label for="calc-dogs">Dogs</label>
+                <select id="calc-dogs" class="calc-select">
+                    <option value="1-2">1–2 Dogs</option>
+                    <option value="3-4">3–4 Dogs</option>
+                    <option value="5+">5+ Dogs</option>
+                </select>
+            </div>
+            <div class="calc-group">
+                <label for="calc-freq">Frequency</label>
+                <select id="calc-freq" class="calc-select">
+                    <option value="weekly">Weekly</option>
+                    <option value="biweekly">Bi-Weekly</option>
+                </select>
+            </div>
+            <div class="calc-group">
+                <label for="calc-length">Membership</label>
+                <select id="calc-length" class="calc-select">
+                    <option value="6">6-Month</option>
+                    <option value="12">12-Month</option>
+                </select>
+            </div>
+        </div>
+        <div class="calc-price-block">
+            <p class="calc-total" id="calc-total">$570</p>
+            <p class="calc-per-month" id="calc-per-month">~$95/mo</p>
+            <p class="calc-savings" id="calc-savings">You save $30 vs. standard month-to-month</p>
+        </div>
+        <a href="https://client.sweepandgo.com/all-star-poop-patrol-ctscq/register" class="btn" id="calc-join">Join Now</a>
+    </div>
+</section>
+
 <section class="service-areas">
     <p>Proudly serving: <strong>Creedmoor | Raleigh | Durham | Wake Forest</strong></p>
 </section>
@@ -90,5 +184,32 @@
     <p>&copy; 2026 All-Star Poop Patrol. High Standards. Clean Yards.</p>
 </footer>
 
+<script>
+    var monthlyRates = {
+        '1-2': { weekly: 100, biweekly: 60 },
+        '3-4': { weekly: 120, biweekly: 80 },
+        '5+':  { weekly: 160, biweekly: 100 }
+    };
+
+    function updateCalc() {
+        var dogs     = document.getElementById('calc-dogs').value;
+        var freq     = document.getElementById('calc-freq').value;
+        var months   = parseInt(document.getElementById('calc-length').value, 10);
+        var monthly  = monthlyRates[dogs][freq];
+        var discount = months === 6 ? 0.95 : 0.85;
+        var total    = Math.round(monthly * months * discount);
+        var effMo    = Math.round(total / months);
+        var saved    = (monthly * months) - total;
+
+        document.getElementById('calc-total').textContent    = '$' + total.toLocaleString();
+        document.getElementById('calc-per-month').textContent = '~$' + effMo + '/mo';
+        document.getElementById('calc-savings').textContent   = 'You save $' + saved + ' vs. standard month-to-month';
+    }
+
+    document.getElementById('calc-dogs').addEventListener('change', updateCalc);
+    document.getElementById('calc-freq').addEventListener('change', updateCalc);
+    document.getElementById('calc-length').addEventListener('change', updateCalc);
+    updateCalc();
+</script>
 </body>
 </html>
