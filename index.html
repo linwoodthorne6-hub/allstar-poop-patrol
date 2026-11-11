@@ -15,7 +15,6 @@
             --border: #e2e8f0;
             --text: #333;
             --text-muted: #555;
-            --text-faint: #777;
             --radius: 8px;
         }
 
@@ -23,236 +22,61 @@
         body { font-family: 'Roboto', sans-serif; margin: 0; padding: 0; color: var(--text); line-height: 1.6; }
         a { color: inherit; }
 
-        /* ── STICKY NAV ── */
         nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: var(--navy);
-            padding: 0 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 56px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            position: sticky; top: 0; z-index: 100;
+            background: var(--navy); padding: 0 24px;
+            display: flex; align-items: center; justify-content: space-between;
+            height: 56px; box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
-        .nav-logo {
-            color: #fff;
-            font-weight: 700;
-            font-size: 0.95rem;
-            text-decoration: none;
-            letter-spacing: 0.02em;
-        }
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-        .nav-links a {
-            color: rgba(255,255,255,0.85);
-            text-decoration: none;
-            font-size: 0.85rem;
-            padding: 6px 10px;
-            border-radius: 4px;
-            transition: background 0.2s, color 0.2s;
-            white-space: nowrap;
-        }
+        .nav-logo { color: #fff; font-weight: 700; font-size: 0.95rem; text-decoration: none; letter-spacing: 0.02em; }
+        .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; margin: 0; padding: 0; }
+        .nav-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.85rem; padding: 6px 10px; border-radius: 4px; transition: background 0.2s, color 0.2s; white-space: nowrap; }
         .nav-links a:hover { background: rgba(255,255,255,0.1); color: #fff; }
-        .nav-links .nav-cta {
-            background: var(--green);
-            color: #fff;
-            font-weight: 700;
-            padding: 7px 14px;
-        }
+        .nav-links .nav-cta { background: var(--green); color: #fff; font-weight: 700; padding: 7px 14px; }
         .nav-links .nav-cta:hover { background: var(--green-dark); }
-        .nav-phone {
-            color: rgba(255,255,255,0.85);
-            font-size: 0.85rem;
-            text-decoration: none;
-            font-weight: 700;
-        }
+        .nav-phone { color: rgba(255,255,255,0.85); font-size: 0.85rem; text-decoration: none; font-weight: 700; }
         .nav-phone:hover { color: #fff; }
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 4px;
-        }
-        .hamburger span {
-            display: block;
-            width: 22px;
-            height: 2px;
-            background: #fff;
-            border-radius: 2px;
-            transition: all 0.3s;
-        }
-        .mobile-menu {
-            display: none;
-            background: var(--navy-dark);
-            padding: 12px 24px 20px;
-            flex-direction: column;
-            gap: 2px;
-        }
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+        .hamburger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; }
+        .mobile-menu { display: none; background: var(--navy-dark); padding: 12px 24px 20px; flex-direction: column; gap: 2px; }
         .mobile-menu.open { display: flex; }
-        .mobile-menu a {
-            color: rgba(255,255,255,0.85);
-            text-decoration: none;
-            font-size: 0.95rem;
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
+        .mobile-menu a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.95rem; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
         .mobile-menu a:last-child { border-bottom: none; }
+        @media (max-width: 768px) { .nav-links, .nav-phone { display: none; } .hamburger { display: flex; } }
 
-        @media (max-width: 768px) {
-            .nav-links, .nav-phone { display: none; }
-            .hamburger { display: flex; }
-        }
-
-        /* ── BUTTONS ── */
-        .btn {
-            display: inline-block;
-            background: var(--green);
-            color: #fff;
-            padding: 15px 32px;
-            text-decoration: none;
-            font-weight: 700;
-            border-radius: 5px;
-            font-size: 1.05rem;
-            transition: background 0.2s;
-            border: none;
-            cursor: pointer;
-        }
+        .btn { display: inline-block; background: var(--green); color: #fff; padding: 15px 32px; text-decoration: none; font-weight: 700; border-radius: 5px; font-size: 1.05rem; transition: background 0.2s; border: none; cursor: pointer; }
         .btn:hover { background: var(--green-dark); }
-        .btn-outline {
-            background: transparent;
-            color: #fff;
-            border: 2px solid rgba(255,255,255,0.6);
-            padding: 13px 30px;
-        }
+        .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.6); padding: 13px 30px; }
         .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: #fff; }
-        .btn-sm { padding: 10px 22px; font-size: 0.95rem; }
 
-        /* ── HERO ── */
-        .hero {
-            background: linear-gradient(160deg, #1a365d 0%, #1e4080 55%, #1a5a3a 100%);
-            color: #fff;
-            padding: 72px 24px 64px;
-            text-align: center;
-        }
-        .hero-eyebrow {
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: rgba(255,255,255,0.65);
-            margin-bottom: 16px;
-        }
-        .hero h1 {
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 700;
-            margin: 0 0 8px;
-            line-height: 1.2;
-        }
+        .hero { background: linear-gradient(160deg, #1a365d 0%, #1e4080 55%, #1a5a3a 100%); color: #fff; padding: 72px 24px 64px; text-align: center; }
+        .hero-eyebrow { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.65); margin-bottom: 16px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; margin: 0 0 8px; line-height: 1.2; }
         .hero h1 span { color: #7ecfa0; }
-        .hero p {
-            font-size: 1.1rem;
-            color: rgba(255,255,255,0.8);
-            max-width: 540px;
-            margin: 0 auto 32px;
-        }
+        .hero p { font-size: 1.1rem; color: rgba(255,255,255,0.8); max-width: 540px; margin: 0 auto 32px; }
         .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-bottom: 40px; }
-        .hero-chips {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            max-width: 560px;
-            margin: 0 auto;
-        }
-        .chip {
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.2);
-            color: rgba(255,255,255,0.9);
-            padding: 6px 14px;
-            border-radius: 999px;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
+        .hero-chips { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; max-width: 560px; margin: 0 auto; }
+        .chip { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.9); padding: 6px 14px; border-radius: 999px; font-size: 0.85rem; font-weight: 500; }
 
-        /* ── HEADER IMG (logo) ── */
-        .logo-bar {
-            background: #fff;
-            text-align: center;
-            padding: 16px 24px;
-            border-bottom: 3px solid var(--navy);
-        }
+        .logo-bar { background: #fff; text-align: center; padding: 16px 24px; border-bottom: 3px solid var(--navy); }
         .logo-bar img { max-width: 200px; height: auto; }
 
-        /* ── SECTION BASE ── */
         .section { padding: 60px 24px; }
         .section-title { color: var(--navy); font-size: 1.9rem; font-weight: 700; margin: 0 0 10px; text-align: center; }
         .section-subtitle { color: var(--text-muted); text-align: center; max-width: 560px; margin: 0 auto 44px; font-size: 1rem; }
-        .section-label {
-            display: inline-block;
-            font-size: 0.72rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--green);
-            margin-bottom: 8px;
-        }
+        .section-label { display: inline-block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--green); margin-bottom: 8px; }
         .container { max-width: 1000px; margin: 0 auto; }
 
-        /* ── SERVICE AREAS ── */
         .areas-section { background: var(--navy); color: #fff; padding: 36px 24px; text-align: center; }
         .areas-section h3 { font-size: 1.1rem; margin: 0 0 16px; color: rgba(255,255,255,0.8); font-weight: 400; }
         .area-chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
-        .area-chip {
-            background: rgba(255,255,255,0.12);
-            border: 1px solid rgba(255,255,255,0.2);
-            color: #fff;
-            padding: 6px 16px;
-            border-radius: 999px;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
+        .area-chip { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 6px 16px; border-radius: 999px; font-size: 0.9rem; font-weight: 500; }
         .area-chip.more { color: rgba(255,255,255,0.6); border-style: dashed; }
 
-        /* ── RESIDENTIAL PRICING CARDS ── */
         .pricing-cards { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; max-width: 900px; margin: 0 auto; }
-        .pricing-card {
-            flex: 1;
-            min-width: 240px;
-            max-width: 290px;
-            background: #fff;
-            border: 2px solid var(--border);
-            border-radius: 10px;
-            padding: 28px 24px;
-            position: relative;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
+        .pricing-card { flex: 1; min-width: 240px; max-width: 290px; background: #fff; border: 2px solid var(--border); border-radius: 10px; padding: 28px 24px; position: relative; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
         .pricing-card.popular { border-color: var(--navy); }
-        .popular-badge {
-            position: absolute;
-            top: -13px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--navy);
-            color: #fff;
-            font-size: 0.72rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            padding: 4px 14px;
-            border-radius: 999px;
-            white-space: nowrap;
-        }
+        .popular-badge { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--navy); color: #fff; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 4px 14px; border-radius: 999px; white-space: nowrap; }
         .pricing-card-icon { font-size: 1.8rem; margin-bottom: 10px; display: block; }
         .pricing-card h3 { color: var(--navy); font-size: 1.25rem; margin: 0 0 4px; }
         .pricing-card .pricing-desc { color: var(--text-muted); font-size: 0.9rem; margin: 0 0 14px; }
@@ -263,82 +87,28 @@
         .perk-list li { padding: 5px 0 5px 22px; position: relative; font-size: 0.88rem; color: #444; }
         .perk-list li::before { content: '\2713'; position: absolute; left: 0; color: var(--green); font-weight: 700; }
 
-        /* ── OWNER OPERATED BANNER ── */
-        .owner-banner {
-            background: var(--bg-light);
-            padding: 44px 24px;
-            text-align: center;
-        }
+        .owner-banner { background: var(--bg-light); padding: 44px 24px; text-align: center; }
         .owner-banner h2 { color: var(--navy); font-size: 1.6rem; margin: 0 0 10px; }
         .owner-banner p { color: var(--text-muted); max-width: 560px; margin: 0 auto; }
 
-        /* ── COMMERCIAL SECTION ── */
-        .commercial-section {
-            background: #fff;
-            padding: 64px 24px;
-        }
+        .commercial-section { background: #fff; padding: 64px 24px; }
         .commercial-inner { max-width: 920px; margin: 0 auto; }
         .commercial-header { text-align: center; margin-bottom: 44px; }
-        .commercial-badge {
-            display: inline-block;
-            background: rgba(26,54,93,0.08);
-            color: var(--navy);
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            padding: 5px 14px;
-            border-radius: 999px;
-            margin-bottom: 14px;
-        }
+        .commercial-badge { display: inline-block; background: rgba(26,54,93,0.08); color: var(--navy); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 5px 14px; border-radius: 999px; margin-bottom: 14px; }
         .commercial-header h2 { color: var(--navy); font-size: 1.9rem; font-weight: 700; margin: 0 0 10px; }
         .commercial-header p { color: var(--text-muted); max-width: 560px; margin: 0 auto; }
-
         .commercial-cards { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-bottom: 36px; }
-        .commercial-card {
-            flex: 1;
-            min-width: 200px;
-            max-width: 230px;
-            background: var(--bg-light);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 24px 20px;
-            text-align: center;
-        }
+        .commercial-card { flex: 1; min-width: 200px; max-width: 230px; background: var(--bg-light); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px 20px; text-align: center; }
         .commercial-card-icon { font-size: 2rem; margin-bottom: 10px; }
         .commercial-card h4 { color: var(--navy); font-size: 0.95rem; font-weight: 700; margin: 0 0 6px; }
         .commercial-card p { color: var(--text-muted); font-size: 0.85rem; margin: 0; line-height: 1.5; }
-
-        .commercial-features {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            justify-content: center;
-            margin: 0 0 32px;
-        }
-        .commercial-feature {
-            background: rgba(47,133,90,0.08);
-            color: var(--green-dark);
-            border: 1px solid rgba(47,133,90,0.2);
-            padding: 5px 14px;
-            border-radius: 999px;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
+        .commercial-features { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 0 0 32px; }
+        .commercial-feature { background: rgba(47,133,90,0.08); color: var(--green-dark); border: 1px solid rgba(47,133,90,0.2); padding: 5px 14px; border-radius: 999px; font-size: 0.85rem; font-weight: 500; }
         .commercial-cta { text-align: center; }
 
-        /* ── SIMPLE PRICING ── */
         .pricing-section { background: var(--bg-light); padding: 60px 24px; text-align: center; }
         .price-grid { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; max-width: 760px; margin: 0 auto; }
-        .price-tile {
-            background: #fff;
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 22px 24px;
-            min-width: 160px;
-            flex: 1;
-            max-width: 200px;
-        }
+        .price-tile { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 22px 24px; min-width: 160px; flex: 1; max-width: 200px; }
         .price-tile.highlight { border-color: var(--navy); box-shadow: 0 0 0 1px var(--navy); }
         .price-tile .pt-label { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 6px; }
         .price-tile .pt-label strong { color: var(--navy); display: block; font-size: 0.95rem; }
@@ -346,7 +116,6 @@
         .price-tile .pt-per { font-size: 0.8rem; color: var(--text-muted); }
         .price-tile .pt-pop { font-size: 0.72rem; font-weight: 700; color: var(--green); text-transform: uppercase; letter-spacing: 0.06em; display: block; margin-bottom: 6px; }
 
-        /* ── MEMBERSHIP ── */
         .membership-section { background: #fff; padding: 60px 24px; text-align: center; }
         .tier-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 740px; margin: 0 auto 44px; }
         .tier-card { flex: 1; min-width: 260px; max-width: 340px; border: 2px solid var(--border); border-radius: 10px; padding: 28px 24px; background: #fff; text-align: left; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
@@ -359,10 +128,8 @@
         .tier-perks li { padding: 7px 0 7px 24px; position: relative; color: #444; font-size: 0.9rem; border-bottom: 1px solid #f0f4f0; }
         .tier-perks li:last-child { border-bottom: none; }
         .tier-perks li::before { content: '\2713'; position: absolute; left: 0; color: var(--green); font-weight: 700; }
-
         .membership-example { text-align: center; color: var(--text-muted); font-size: 0.9rem; max-width: 480px; margin: 0 auto; }
 
-        /* ── HOW IT WORKS ── */
         .steps-section { background: var(--bg-light); padding: 60px 24px; text-align: center; }
         .steps-grid { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; max-width: 900px; margin: 0 auto; }
         .step-card { flex: 1; min-width: 190px; max-width: 215px; }
@@ -370,7 +137,6 @@
         .step-card h4 { color: var(--navy); margin: 0 0 6px; font-size: 1rem; }
         .step-card p { font-size: 0.88rem; color: var(--text-muted); margin: 0; }
 
-        /* ── WHY ALL-STAR ── */
         .why-section { background: #fff; padding: 60px 24px; }
         .features-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; max-width: 860px; margin: 0 auto; }
         .feature-card { flex: 1; min-width: 230px; max-width: 260px; padding: 24px 20px; border: 1px solid var(--border); border-radius: var(--radius); text-align: center; }
@@ -378,7 +144,6 @@
         .feature-card h4 { color: var(--navy); margin: 0 0 6px; font-size: 1rem; font-weight: 700; }
         .feature-card p { font-size: 0.87rem; color: var(--text-muted); margin: 0; }
 
-        /* ── REVIEWS ── */
         .reviews-section { background: var(--bg-light); padding: 60px 24px; text-align: center; }
         .stars { color: #f6a700; font-size: 1.1rem; margin-bottom: 4px; }
         .review-score { font-size: 2rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
@@ -389,26 +154,10 @@
         .review-card p { font-size: 0.9rem; color: #444; margin: 0 0 12px; font-style: italic; }
         .reviewer { font-size: 0.82rem; color: var(--text-muted); font-weight: 700; }
 
-        /* ── FAQ ── */
         .faq-section { background: #fff; padding: 60px 24px; }
         .faq-inner { max-width: 700px; margin: 0 auto; }
         .faq-item { border-bottom: 1px solid var(--border); }
-        .faq-question {
-            width: 100%;
-            text-align: left;
-            background: none;
-            border: none;
-            padding: 18px 0;
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: var(--navy);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 12px;
-            font-family: 'Roboto', sans-serif;
-        }
+        .faq-question { width: 100%; text-align: left; background: none; border: none; padding: 18px 0; font-size: 0.95rem; font-weight: 700; color: var(--navy); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; font-family: 'Roboto', sans-serif; }
         .faq-question:hover { color: var(--green); }
         .faq-chevron { font-size: 0.8rem; transition: transform 0.2s; flex-shrink: 0; }
         .faq-item.open .faq-chevron { transform: rotate(180deg); }
@@ -416,23 +165,12 @@
         .faq-answer-inner { padding: 0 0 18px; font-size: 0.9rem; color: var(--text-muted); line-height: 1.65; }
         .faq-item.open .faq-answer { max-height: 200px; }
 
-        /* ── GET STARTED FORM ── */
         .form-section { background: var(--bg-light); padding: 60px 24px; }
         .form-inner { max-width: 560px; margin: 0 auto; }
         .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
         .form-grid .full { grid-column: 1 / -1; }
         label { display: block; font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 5px; }
-        input, select, textarea {
-            width: 100%;
-            padding: 11px 13px;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            font-size: 0.95rem;
-            font-family: 'Roboto', sans-serif;
-            color: var(--text);
-            background: #fff;
-            transition: border-color 0.2s;
-        }
+        input, select, textarea { width: 100%; padding: 11px 13px; border: 1px solid var(--border); border-radius: 6px; font-size: 0.95rem; font-family: 'Roboto', sans-serif; color: var(--text); background: #fff; transition: border-color 0.2s; }
         input:focus, select:focus, textarea:focus { outline: none; border-color: var(--navy); }
         textarea { resize: vertical; min-height: 90px; }
         .form-submit { margin-top: 20px; }
@@ -442,13 +180,8 @@
         .form-alt { margin-top: 24px; text-align: center; display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; }
         .form-alt a { color: var(--navy); font-weight: 700; text-decoration: none; font-size: 0.95rem; }
         .form-alt a:hover { color: var(--green); }
+        @media (max-width: 540px) { .form-grid { grid-template-columns: 1fr; } .form-grid .full { grid-column: 1; } }
 
-        @media (max-width: 540px) {
-            .form-grid { grid-template-columns: 1fr; }
-            .form-grid .full { grid-column: 1; }
-        }
-
-        /* ── FOOTER ── */
         footer { background: var(--navy); color: #fff; padding: 32px 24px; text-align: center; }
         .footer-brand { font-weight: 700; font-size: 0.9rem; margin-bottom: 4px; }
         .footer-sub { color: rgba(255,255,255,0.55); font-size: 0.8rem; margin-bottom: 16px; }
@@ -460,7 +193,6 @@
 </head>
 <body>
 
-<!-- ── NAVIGATION ── -->
 <nav>
     <a href="#" class="nav-logo">⭐ All-Star Poop Patrol</a>
     <ul class="nav-links">
@@ -488,12 +220,10 @@
     <a href="#getstarted" onclick="closeMenu()" style="color:#7ecfa0;font-weight:700;">Get Started →</a>
 </div>
 
-<!-- ── LOGO BAR ── -->
 <div class="logo-bar">
     <img src="Allstar Poop Patrol.png" alt="All-Star Poop Patrol Logo">
 </div>
 
-<!-- ── HERO ── -->
 <section class="hero">
     <p class="hero-eyebrow">The Triangle's Trusted Dog Waste Removal Service</p>
     <h1>Come Home to a<br><span>Clean Yard</span> Every Week</h1>
@@ -510,7 +240,6 @@
     </div>
 </section>
 
-<!-- ── SERVICE AREAS ── -->
 <div class="areas-section">
     <h3>Serving the Triangle Area of NC</h3>
     <div class="area-chips">
@@ -524,14 +253,12 @@
     </div>
 </div>
 
-<!-- ── RESIDENTIAL SERVICES ── -->
 <section class="section" id="services">
     <div class="container">
         <span class="section-label">What We Offer</span>
         <h2 class="section-title">Residential Services</h2>
         <p class="section-subtitle">Simple, flat monthly rates with no hidden fees. All visits include on-the-way texts and photo confirmation.</p>
         <div class="pricing-cards">
-
             <div class="pricing-card popular">
                 <div class="popular-badge">⭐ Most Popular</div>
                 <span class="pricing-card-icon">📅</span>
@@ -547,7 +274,6 @@
                     <li>Waste double-bagged &amp; placed in your bin</li>
                 </ul>
             </div>
-
             <div class="pricing-card">
                 <span class="pricing-card-icon">🗓️</span>
                 <h3>Bi-Weekly Service</h3>
@@ -562,7 +288,6 @@
                     <li>Waste double-bagged &amp; placed in your bin</li>
                 </ul>
             </div>
-
             <div class="pricing-card">
                 <span class="pricing-card-icon">🧹</span>
                 <h3>One-Time Cleanup</h3>
@@ -576,18 +301,15 @@
                     <li>Waste double-bagged &amp; placed in your bin</li>
                 </ul>
             </div>
-
         </div>
     </div>
 </section>
 
-<!-- ── OWNER OPERATED ── -->
 <div class="owner-banner">
     <h2>👤 Owner Operated</h2>
     <p><strong>The Same Person, Every Visit.</strong> Not a franchise. Not a rotating crew. You get the owner — accountable, consistent, and genuinely invested in every yard.</p>
 </div>
 
-<!-- ── COMMERCIAL SERVICES ── -->
 <section class="commercial-section" id="commercial">
     <div class="commercial-inner">
         <div class="commercial-header">
@@ -595,7 +317,6 @@
             <h2>We Serve Properties Too</h2>
             <p>A subsidiary of NC Commercial Clean LLC, we offer flexible, custom agreements for property managers and commercial clients.</p>
         </div>
-
         <div class="commercial-cards">
             <div class="commercial-card">
                 <div class="commercial-card-icon">🏢</div>
@@ -618,21 +339,18 @@
                 <p>Keep outdoor areas guest-ready with reliable, flexible scheduling.</p>
             </div>
         </div>
-
         <div class="commercial-features">
             <span class="commercial-feature">Flexible scheduling (daily, weekly, or custom)</span>
             <span class="commercial-feature">Photo confirmation</span>
             <span class="commercial-feature">Custom agreements</span>
             <span class="commercial-feature">Direct owner access</span>
         </div>
-
         <div class="commercial-cta">
             <a href="#getstarted" class="btn">Request a Commercial Quote</a>
         </div>
     </div>
 </section>
 
-<!-- ── SIMPLE PRICING ── -->
 <section class="pricing-section" id="pricing">
     <span class="section-label">Simple Pricing</span>
     <h2 class="section-title">Flat Monthly Rates, No Surprises</h2>
@@ -667,12 +385,10 @@
     </div>
 </section>
 
-<!-- ── MEMBERSHIP ── -->
 <section class="membership-section" id="membership">
     <span class="section-label">Save More</span>
     <h2 class="section-title">Membership Plans</h2>
     <p class="section-subtitle">Commit to a plan and save with exclusive discounts and perks.</p>
-
     <div class="tier-grid">
         <div class="tier-card">
             <span class="tier-badge">6-Month Plan</span>
@@ -700,73 +416,30 @@
     <p class="membership-example">Example: Weekly service (1–2 dogs) on the 6-month plan = ~$570 total (~$95/mo) — save $30 vs month-to-month.</p>
 </section>
 
-<!-- ── HOW IT WORKS ── -->
 <section class="steps-section" id="howitworks">
     <span class="section-label">The Process</span>
     <h2 class="section-title">How It Works</h2>
     <div class="steps-grid">
-        <div class="step-card">
-            <div class="step-number">1</div>
-            <h4>Request Service</h4>
-            <p>Fill out the form below or call (919) 817-8066 to get started.</p>
-        </div>
-        <div class="step-card">
-            <div class="step-number">2</div>
-            <h4>We Confirm</h4>
-            <p>We'll confirm your details within 24 hours and schedule your first visit.</p>
-        </div>
-        <div class="step-card">
-            <div class="step-number">3</div>
-            <h4>On-The-Way Text</h4>
-            <p>You'll receive a text before every visit so you're never caught off guard.</p>
-        </div>
-        <div class="step-card">
-            <div class="step-number">4</div>
-            <h4>Photo Proof</h4>
-            <p>After every visit you'll receive a photo confirmation of the clean yard.</p>
-        </div>
+        <div class="step-card"><div class="step-number">1</div><h4>Request Service</h4><p>Fill out the form below or call (919) 817-8066 to get started.</p></div>
+        <div class="step-card"><div class="step-number">2</div><h4>We Confirm</h4><p>We'll confirm your details within 24 hours and schedule your first visit.</p></div>
+        <div class="step-card"><div class="step-number">3</div><h4>On-The-Way Text</h4><p>You'll receive a text before every visit so you're never caught off guard.</p></div>
+        <div class="step-card"><div class="step-number">4</div><h4>Photo Proof</h4><p>After every visit you'll receive a photo confirmation of the clean yard.</p></div>
     </div>
 </section>
 
-<!-- ── WHY ALL-STAR ── -->
 <section class="why-section">
     <span class="section-label" style="display:block;text-align:center;">Why All-Star</span>
     <h2 class="section-title">What Makes Us Different</h2>
     <div class="features-grid">
-        <div class="feature-card">
-            <div class="feat-icon">👤</div>
-            <h4>Owner Operated</h4>
-            <p>Direct accountability on every visit — not a franchise crew.</p>
-        </div>
-        <div class="feature-card">
-            <div class="feat-icon">📸</div>
-            <h4>Photo Confirmation</h4>
-            <p>Proof of a clean yard sent after every single visit.</p>
-        </div>
-        <div class="feature-card">
-            <div class="feat-icon">📱</div>
-            <h4>On-The-Way Texts</h4>
-            <p>Know exactly when we're arriving before every visit.</p>
-        </div>
-        <div class="feature-card">
-            <div class="feat-icon">🛡️</div>
-            <h4>Bonded &amp; Insured</h4>
-            <p>Background-checked staff. Peace of mind guaranteed.</p>
-        </div>
-        <div class="feature-card">
-            <div class="feat-icon">🚫</div>
-            <h4>No Long-Term Contracts</h4>
-            <p>Cancel anytime with 30 days' notice. No penalties.</p>
-        </div>
-        <div class="feature-card">
-            <div class="feat-icon">🏘️</div>
-            <h4>Locally Owned</h4>
-            <p>A Triangle-area business — not a national franchise.</p>
-        </div>
+        <div class="feature-card"><div class="feat-icon">👤</div><h4>Owner Operated</h4><p>Direct accountability on every visit — not a franchise crew.</p></div>
+        <div class="feature-card"><div class="feat-icon">📸</div><h4>Photo Confirmation</h4><p>Proof of a clean yard sent after every single visit.</p></div>
+        <div class="feature-card"><div class="feat-icon">📱</div><h4>On-The-Way Texts</h4><p>Know exactly when we're arriving before every visit.</p></div>
+        <div class="feature-card"><div class="feat-icon">🛡️</div><h4>Bonded &amp; Insured</h4><p>Background-checked staff. Peace of mind guaranteed.</p></div>
+        <div class="feature-card"><div class="feat-icon">🚫</div><h4>No Long-Term Contracts</h4><p>Cancel anytime with 30 days' notice. No penalties.</p></div>
+        <div class="feature-card"><div class="feat-icon">🏘️</div><h4>Locally Owned</h4><p>A Triangle-area business — not a national franchise.</p></div>
     </div>
 </section>
 
-<!-- ── REVIEWS ── -->
 <section class="reviews-section">
     <span class="section-label">Customer Reviews</span>
     <h2 class="section-title">What Our Clients Say</h2>
@@ -774,90 +447,27 @@
     <div class="review-score">5.0</div>
     <div class="review-source">Google Reviews</div>
     <div class="review-cards">
-        <div class="review-card">
-            <div class="review-stars">★★★★★</div>
-            <p>&ldquo;Love that I get a text before they arrive and a photo when they're done. Fair pricing and always reliable.&rdquo;</p>
-            <span class="reviewer">— Rachel A.</span>
-        </div>
-        <div class="review-card">
-            <div class="review-stars">★★★★★</div>
-            <p>&ldquo;My yard has never looked better. The photo updates give me peace of mind every single week.&rdquo;</p>
-            <span class="reviewer">— Shanae T.</span>
-        </div>
-        <div class="review-card">
-            <div class="review-stars">★★★★★</div>
-            <p>&ldquo;Friendly, responsive, and professional. I appreciate the advance notice before every visit. Highly recommend!&rdquo;</p>
-            <span class="reviewer">— Miriam L.</span>
-        </div>
+        <div class="review-card"><div class="review-stars">★★★★★</div><p>&ldquo;Love that I get a text before they arrive and a photo when they're done. Fair pricing and always reliable.&rdquo;</p><span class="reviewer">— Rachel A.</span></div>
+        <div class="review-card"><div class="review-stars">★★★★★</div><p>&ldquo;My yard has never looked better. The photo updates give me peace of mind every single week.&rdquo;</p><span class="reviewer">— Shanae T.</span></div>
+        <div class="review-card"><div class="review-stars">★★★★★</div><p>&ldquo;Friendly, responsive, and professional. I appreciate the advance notice before every visit. Highly recommend!&rdquo;</p><span class="reviewer">— Miriam L.</span></div>
     </div>
 </section>
 
-<!-- ── FAQ ── -->
 <section class="faq-section" id="faq">
     <div class="faq-inner">
         <span class="section-label" style="display:block;text-align:center;">Questions</span>
         <h2 class="section-title">Frequently Asked Questions</h2>
-
-        <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">
-                Do I need to be home during the visit?
-                <span class="faq-chevron">▼</span>
-            </button>
-            <div class="faq-answer"><div class="faq-answer-inner">No. As long as we can access your yard (gate code, unlocked gate, etc.) we'll take care of everything without you needing to be there.</div></div>
-        </div>
-        <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">
-                What areas do you serve?
-                <span class="faq-chevron">▼</span>
-            </button>
-            <div class="faq-answer"><div class="faq-answer-inner">We serve the Triangle area including Raleigh, Durham, Cary, Morrisville, Wake Forest, and Creedmoor, plus surrounding communities. Call to confirm your address.</div></div>
-        </div>
-        <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">
-                Do you service businesses?
-                <span class="faq-chevron">▼</span>
-            </button>
-            <div class="faq-answer"><div class="faq-answer-inner">Yes! We service apartment complexes, HOAs, dog parks, pet-friendly offices, hotels, and short-term rentals. Contact us for a custom commercial quote.</div></div>
-        </div>
-        <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">
-                What happens to the waste?
-                <span class="faq-chevron">▼</span>
-            </button>
-            <div class="faq-answer"><div class="faq-answer-inner">All waste is double-bagged and placed in your trash bin at the end of every visit.</div></div>
-        </div>
-        <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">
-                Do you service in bad weather?
-                <span class="faq-chevron">▼</span>
-            </button>
-            <div class="faq-answer"><div class="faq-answer-inner">Yes, except during severe conditions. If we need to reschedule due to weather, we'll reschedule at no extra charge.</div></div>
-        </div>
-        <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">
-                Can I pause or cancel my service?
-                <span class="faq-chevron">▼</span>
-            </button>
-            <div class="faq-answer"><div class="faq-answer-inner">Month-to-month customers can cancel with 30 days' notice. Membership holders can pause service for up to 30 days per year.</div></div>
-        </div>
-        <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">
-                What about aggressive dogs?
-                <span class="faq-chevron">▼</span>
-            </button>
-            <div class="faq-answer"><div class="faq-answer-inner">For dogs that are reactive or aggressive, we ask that they be secured indoors or separated from the area during our visit.</div></div>
-        </div>
-        <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">
-                How soon can I start?
-                <span class="faq-chevron">▼</span>
-            </button>
-            <div class="faq-answer"><div class="faq-answer-inner">Usually within a few days of signing up! Fill out the form below or call us and we'll get you on the schedule quickly.</div></div>
-        </div>
+        <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Do I need to be home during the visit?<span class="faq-chevron">▼</span></button><div class="faq-answer"><div class="faq-answer-inner">No. As long as we can access your yard (gate code, unlocked gate, etc.) we'll take care of everything without you needing to be there.</div></div></div>
+        <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">What areas do you serve?<span class="faq-chevron">▼</span></button><div class="faq-answer"><div class="faq-answer-inner">We serve the Triangle area including Raleigh, Durham, Cary, Morrisville, Wake Forest, and Creedmoor, plus surrounding communities. Call to confirm your address.</div></div></div>
+        <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Do you service businesses?<span class="faq-chevron">▼</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes! We service apartment complexes, HOAs, dog parks, pet-friendly offices, hotels, and short-term rentals. Contact us for a custom commercial quote.</div></div></div>
+        <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">What happens to the waste?<span class="faq-chevron">▼</span></button><div class="faq-answer"><div class="faq-answer-inner">All waste is double-bagged and placed in your trash bin at the end of every visit.</div></div></div>
+        <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Do you service in bad weather?<span class="faq-chevron">▼</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes, except during severe conditions. If we need to reschedule due to weather, we'll reschedule at no extra charge.</div></div></div>
+        <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Can I pause or cancel my service?<span class="faq-chevron">▼</span></button><div class="faq-answer"><div class="faq-answer-inner">Month-to-month customers can cancel with 30 days' notice. Membership holders can pause service for up to 30 days per year.</div></div></div>
+        <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">What about aggressive dogs?<span class="faq-chevron">▼</span></button><div class="faq-answer"><div class="faq-answer-inner">For dogs that are reactive or aggressive, we ask that they be secured indoors or separated from the area during our visit.</div></div></div>
+        <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">How soon can I start?<span class="faq-chevron">▼</span></button><div class="faq-answer"><div class="faq-answer-inner">Usually within a few days of signing up! Fill out the form below or call us and we'll get you on the schedule quickly.</div></div></div>
     </div>
 </section>
 
-<!-- ── GET STARTED FORM ── -->
 <section class="form-section" id="getstarted">
     <div class="form-inner">
         <span class="section-label" style="display:block;text-align:center;">Get Started</span>
@@ -869,8 +479,9 @@
             <p>In the meantime, feel free to call or text us at <a href="tel:+19198178066" style="color:var(--green-dark);font-weight:700;">(919) 817-8066</a>.</p>
         </div>
 
-        <!-- Connect this form: sign up at formspree.io, create a form, replace YOUR_FORM_ID below -->
-        <form id="quoteForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" onsubmit="handleFormSubmit(event)">
+        <form id="quoteForm" name="aspp-lead" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="aspp-lead">
+            <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
             <div class="form-grid">
                 <div>
                     <label for="f-dogs">Number of Dogs</label>
@@ -883,7 +494,7 @@
                 </div>
                 <div>
                     <label for="f-service">Service Type</label>
-                    <select id="f-service" name="service_type" required>
+                    <select id="f-service" name="service" required>
                         <option value="">Select...</option>
                         <option>Weekly</option>
                         <option>Bi-Weekly</option>
@@ -925,7 +536,6 @@
     </div>
 </section>
 
-<!-- ── FOOTER ── -->
 <footer>
     <div class="footer-brand">⭐ All-Star Poop Patrol</div>
     <div class="footer-sub">A subsidiary of NC Commercial Clean LLC</div>
@@ -942,12 +552,8 @@
 </footer>
 
 <script>
-    function toggleMenu() {
-        document.getElementById('mobileMenu').classList.toggle('open');
-    }
-    function closeMenu() {
-        document.getElementById('mobileMenu').classList.remove('open');
-    }
+    function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+    function closeMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
 
     function toggleFaq(btn) {
         var item = btn.closest('.faq-item');
@@ -956,13 +562,31 @@
         if (!isOpen) item.classList.add('open');
     }
 
-    function handleFormSubmit(e) {
-        if (document.getElementById('quoteForm').action.indexOf('YOUR_FORM_ID') !== -1) {
-            e.preventDefault();
-            document.getElementById('quoteForm').style.display = 'none';
-            document.getElementById('formSuccess').style.display = 'block';
+    document.getElementById('quoteForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        var btn = this.querySelector('button[type=submit]');
+        btn.textContent = 'Sending...';
+        btn.disabled = true;
+        try {
+            var res = await fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(new FormData(this)).toString()
+            });
+            if (res.ok) {
+                this.style.display = 'none';
+                document.getElementById('formSuccess').style.display = 'block';
+            } else {
+                btn.textContent = 'Send My Request 🐾';
+                btn.disabled = false;
+                alert('Something went wrong. Please call or text us at (919) 817-8066.');
+            }
+        } catch(err) {
+            btn.textContent = 'Send My Request 🐾';
+            btn.disabled = false;
+            alert('Something went wrong. Please call or text us at (919) 817-8066.');
         }
-    }
+    });
 </script>
 </body>
 </html>
