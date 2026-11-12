@@ -46,8 +46,8 @@ exports.handler = async (event) => {
       },
       body: JSON.stringify({
         from: '+19198178066',
-        to: e164,
-        body: message,
+        to: [e164],
+        content: message,
       }),
     });
 
